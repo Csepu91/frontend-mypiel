@@ -1,0 +1,11 @@
+<div class="product-item">
+    <div class="product-item__content">
+        <div class="product-item__name">{{ product().nombre | titlecase }}</div>
+        <div class="product-item__marca">{{ product().marca }}</div>
+        <div class="product-item__pActivos">{{ product().pActivo.join(', ') }}</div>
+        <div class="product-item__usos">{{ product().usos.join(', ') }}</div>
+    </div>
+    <div class="product-item__image">
+        <img [src]="product().urlImagen" alt="product.urlImagen">
+    </div>
+</div>

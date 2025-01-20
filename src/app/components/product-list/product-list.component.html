@@ -1,0 +1,8 @@
+<div class="product-list">
+    @for (product of products; track product.nombre) {
+    <app-product-item [product]="product" />
+    }@empty {
+    <h1>Ningún producto encontrado</h1>
+    }
+
+</div>

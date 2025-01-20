@@ -1,0 +1,35 @@
+<div class="post-item">
+    <h3>Agregar un comentario para el producto utilizado</h3>
+    <div>
+        <h4 class="error">{{message}}</h4>
+        <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="column">
+                    <div class="input-group">
+                        <label for="descripcion">Descripción</label>
+                        <input formControlName="descripcion" type="text" id="descripcion" name="descripcion" required>
+                        <label for="valoracion">Valoración</label>
+                        <input formControlName="valoracion" type="number" id="valoracion" name="valoracion" required>
+                        <label for="urlImagen">Imagen</label>
+                        <input formControlName="urlImagen" type="text" id="urlImagen" name="urlImagen" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button>Comentar</button>
+            </div>
+        </form>
+    </div>
+    <div class="post-list">
+        @for (i of posts(); track i.descripcion) {
+        <div class="post__content">
+            <div class="post__name">{{ i.descripcion }}</div>
+            <div class="post__marca">{{ i.valoracion }}</div>
+            <div class="post__pActivos">{{ i.urlImagen }}</div>
+        </div>
+        }@empty {
+        <h1>Ningún post encontrado</h1>
+        }
+    </div>
+
+</div>
