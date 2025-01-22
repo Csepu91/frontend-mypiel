@@ -1,0 +1,21 @@
+<div class="product-prueba">
+    <div class="product-prueba__image">
+        <img [src]="product().urlImagen" [alt]="product().nombre">
+    </div>
+    <div class="product-prueba__content">
+        <h3>{{product().nombre}}</h3>
+        <p>{{product().marca}} - {{product().empresa}}</p>
+        <div class="product-prueba__activos">
+            <p>Principios Activos:</p>
+            @for(activo of product().pActivo; track activo) {
+            <span>{{activo}}</span>
+            }
+        </div>
+        <div class="product-prueba__usos">
+            <p>Usos:</p>
+            @for(uso of product().usos; track uso) {
+            <span>{{uso}}</span>
+            }
+        </div>
+    </div>
+</div>

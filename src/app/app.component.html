@@ -1,4 +1,20 @@
-<div>
+<div class="container">
   <app-product-list />
   <app-post-item [posts]="posts" (newPost)="onNewPost($event)" />
+
+  <button class="toggle-button" (click)="toggleProducts()">
+    {{ showProducts ? 'Ocultar Productos' : 'Mostrar Productos' }}
+  </button>
+
+  @if (showProducts) {
+  <div class="products-grid">
+    @if (productsPrueba(); as products) {
+    @for (product of products; track product.nombre) {
+    <app-product-prueba-item [product]="product" />
+    }
+    } @else {
+    <p>Cargando productos...</p>
+    }
+  </div>
+  }
 </div>
