@@ -9,7 +9,7 @@ import { LoginCredenciales } from '../models/loginCredenciales.model';
   providedIn: 'root'
 })
 export class PrincipalService {
-  private apiURL = 'http://localhost:3000';
+  private apiURL = 'https://backend-mypiel-production.up.railway.app';
   private http = inject(HttpClient);
 
 
