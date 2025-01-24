@@ -1,8 +1,39 @@
 <div class="product-list">
-    @for (product of products; track product.nombre) {
-    <app-product-item [product]="product" />
-    }@empty {
-    <h1>Ningún producto encontrado</h1>
-    }
+    <!--         <button class="toggle-button" (click)="toggleProducts()">
+        {{ showProducts ? 'Ocultar Productos' : 'Mostrar Productos' }}
+    </button> -->
 
+    <!--     @if (showProducts) {
+    <div class="products-grid">
+        @if (product(); as products) {
+        @for (product of products; track product.nombre) {
+        <app-product-item [product]="product" />
+        }
+        } @else {
+        <p>Cargando productos...</p>
+        }
+    </div> -->
+
+    <!-- 
+    @if (showProducts) {
+    <div class="products-grid">
+        @if (product(); as products) {
+        @for (product of products; track product.nombre) {
+        <app-product-item [product]="product" />
+        }
+        } @else {
+        <p>Cargando productos...</p>
+        }
+    </div>
+    } -->
+
+    <div class="product-list">
+        <div class="products-grid">
+            @for (product of products(); track product.nombre) {
+            <app-product-item [product]="product" />
+            } @empty {
+            <p>No hay productos para mostrar</p>
+            }
+        </div>
+    </div>
 </div>

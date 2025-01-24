@@ -5,4 +5,5 @@ export interface Product {
     pActivo: Array<string>;
     usos: Array<string>;
     urlImagen: string;
+
 }

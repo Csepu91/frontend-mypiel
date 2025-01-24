@@ -1,0 +1,133 @@
+.card-contenedor {
+    width: 100%;
+    min-height: 100vh;
+    background: #FFECD7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.card-login {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 141, 177, 0.1);
+    margin-top: 2rem
+}
+
+/* .main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #ff2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+/* .left-login>h1 {
+    color: #008DB1;
+}
+
+.left-login-img {
+    width: 35vw;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+.card-login>h1 {
+    color: #008DB1;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.textfield>input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #8fe5fa2f;
+    color: #4c4c4cde;
+    font-size: 12px;
+    box-shadow: 0px 5px 10px #bcbcbc88;
+    outline: none;
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: #8fe5fa61;
+        transition: background-color 0.8s ease;
+    }
+}
+
+.textfield>input::placeholder {
+    color: #747474ae;
+}
+
+.textfield>label {
+    color: #008DB1;
+    margin-bottom: 10px;
+}
+
+.btn-login {
+    width: 40%;
+    padding: 16px 0;
+    margin: 25px;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffffff;
+    background: #008DB1;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px #8da49952;
+
+    &:hover {
+        background-color: #009cc3;
+        transition: background-color 0.5s ease;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .card-contenedor {
+        padding: 1rem;
+    }
+
+    .card-login {
+        width: 100%;
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+}
