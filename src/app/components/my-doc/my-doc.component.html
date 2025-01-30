@@ -1,1 +1,66 @@
-<p>SOY MYDOC</p>
+<div class="mydoc-container">
+    <section class="seccion-principal">
+        <div class="texto-superior">
+            <h1>Bienvenido a MyDoc</h1>
+            <p>Recibe atención de dermatólogos especializados en la belleza y salud de tu piel</p>
+        </div>
+        <div class="particion-superior">
+            <app-panel-usuario />
+            @if (isLoggedIn){
+            @if (!esExtendido()){
+            <app-forulario-user-extend />
+            }
+            }
+            <div class="sección-derecha">
+                @if (!esExtendido()){
+                <div class="alerta-acceso">
+                    <p>Necesita completar los datos de su perfil para solicitar atención.
+                        <br>Sección Personal - Completar Datos
+                    </p>
+                </div>
+                }
+
+                <form [formGroup]="formulario" class="formulario-consulta" [class.disabled]="!esExtendido()"
+                    [attr.disabled]="!esExtendido()">
+                    <fieldset [disabled]="!esExtendido()">
+
+                        <div class="campo-formulario">
+                            <label class="switch">
+                                <span>Consentimiento Informado:</span>
+                                <div class="switch-container">
+                                    <input type="checkbox" formControlName="consentimiento">
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+                            <p>Al marcar el selector superior usted indica que está informado(a) de los alcances de la
+                                telemedicina, entiende y da consentimiento libre y voluntario para recibir atención por
+                                este
+                                medio. Asimismo, se compromete a entregar información veraz acerca de su situación de
+                                salud.
+                            </p>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>Antecedentes Médicos:</label>
+                            <textarea formControlName="antecedentes" rows="5"
+                                placeholder="Describa sus antecedentes médicos relevantes, enfermedades crónicas, medicamentos que utiliza, consultas...">
+                        </textarea>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>Imágenes:</label>
+                            <p>Cargue las imágenes de alteraciones de la piel que le gustaría que sean evaluadas por el
+                                especialista.</p>
+                            <input type="file" multiple accept="image/*" (change)="onFileChange($event)"
+                                class="input-imagenes">
+                            <div class="previsualizacion-imagenes" *ngIf="imagenesCargadas.length > 0">
+                                <p>{{imagenesCargadas.length}} archivo(s) seleccionado(s)</p>
+                            </div>
+                        </div>
+                        <button class="submit-button" type="submit">Solicitar Atención</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

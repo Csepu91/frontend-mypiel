@@ -1,17 +1,19 @@
 <div class="card-contenedor">
     <div class="card-login">
         <h1>Login</h1>
-        <div class="textfield">
-            <label for="correo-input">Correo</label>
-            <input id="correo-input" type="email" name="correo" [(ngModel)]="apiLoginObj.correo"
-                placeholder="correo@ejemplo.com">
-        </div>
-        <div class="textfield">
-            <label for="password-input">Contraseña</label>
-            <input id="password-input" type="password" name="password" [(ngModel)]="apiLoginObj.password"
-                placeholder="Contraseña">
-        </div>
-        <button class="btn-login" (click)="onLogin()">Iniciar Sesión</button>
-        <button class="btn-secondary" (click)="navigateToRegister()">Crear perfil</button>
+        <form (ngSubmit)="onLogin()">
+            <div class="textfield">
+                <label for="correo-input">Correo</label>
+                <input id="correo-input" type="email" name="correo" [(ngModel)]="apiLoginObj.correo"
+                    placeholder="correo@ejemplo.com" autocomplete="email">
+            </div>
+            <div class="textfield">
+                <label for="password-input">Contraseña</label>
+                <input id="password-input" type="password" name="password" [(ngModel)]="apiLoginObj.password"
+                    placeholder="Contraseña" autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn-login">Iniciar Sesión</button>
+            <button type="button" class="btn-secondary" (click)="navigateToRegister()">Crear perfil</button>
+        </form>
     </div>
 </div>

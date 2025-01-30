@@ -1,0 +1,10 @@
+@if (!isLoggedIn()) {
+<div class="panel-usuario">
+    <h2>Sección Personal</h2>
+    <p>Accede a todos los servicios de MyPiel</p>
+    <div class="botones-acceso">
+        <button class="btn-primary" (click)="navigateToLogin()">Acceder</button>
+        <button class="btn-secondary" (click)="navigateToRegister()">Crear perfil</button>
+    </div>
+</div>
+}

@@ -1,0 +1,26 @@
+<div class="card-contenedor">
+    <div class="card-user-extend">
+        <h1>Información Complementaria</h1>
+        <div class="textfield">
+            <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+            <input id="fecha-nacimiento" type="date" name="fNacimiento" [(ngModel)]="apiExtendObj.fNacimiento">
+        </div>
+        <div class="textfield">
+            <label for="identificacion">Número de Identificación</label>
+            <input id="identificacion" type="text" name="nIdentificacion" [(ngModel)]="apiExtendObj.nIdentificacion"
+                placeholder="Ej: 12345678-9">
+        </div>
+        <div class="textfield">
+            <label for="telefono">Teléfono de contacto</label>
+            <input id="telefono" type="tel" name="fContacto" [(ngModel)]="apiExtendObj.fContacto"
+                placeholder="+569XXXXXXXX">
+        </div>
+        <div class="textfield">
+            <label for="correo-input">Correo electrónico de su cuenta</label>
+            <input id="correo-input" type="email" name="correo" [(ngModel)]="apiExtendObj.correo"
+                placeholder="correo@ejemplo.com">
+        </div>
+
+        <button class="btn-register" (click)="forExtend()">Enviar Información</button>
+    </div>
+</div>

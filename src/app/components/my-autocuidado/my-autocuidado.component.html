@@ -5,25 +5,16 @@
             <p>Busca productos dermatológicos y gestiona tu rutina de cuidado personalizada</p>
         </div>
         <div class="particion-superior">
-            <div class="panel-usuario">
-                <h2>MyAutocuidado</h2>
-                <p>Seguimiento personalizado de tu rutina</p>
 
-                @if (!isLoggedIn) {
-                <div class="botones-acceso">
-                    <button class="btn-primary" (click)="navigateToLogin()">Acceder</button>
-                    <button class="btn-secondary" (click)="navigateToRegister()">Crear perfil</button>
-                </div>
-                } @else {
-                <app-on-my-autocuidado />
-                }
+            <div>
+                <app-panel-usuario />
             </div>
 
             <div class="sección-derecha">
                 <div class="barra-busqueda">
-                    <input type="text" [(ngModel)]="searchQuery" placeholder="Busca por producto, marca o componente..."
-                        [minLength]="3">
-                    <button class="btn-buscar" (click)="onSearch()"><!-- [disabled]="searchQuery.length < 3" -->
+                    <input type="text" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()"
+                        placeholder="Busca por producto, marca o componente..." [minLength]="3">
+                    <button class="btn-buscar" (click)="onSearch()">
                         Buscar
                     </button>
                 </div>
@@ -41,6 +32,4 @@
     <section class="seccion-inferior">
         <app-on-my-autocuidado />
     </section>
-
-
 </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginCredenciales } from '../../models/loginCredenciales.model';
@@ -18,6 +18,8 @@ import { PrincipalService } from '../../services/principal.service';
 export class LoginComponent {
   router = inject(Router);
   principalService = inject(PrincipalService);
+  isLoggedIn = signal<boolean>(false);
+
 
   apiLoginObj: LoginCredenciales = {
     "correo": "",
@@ -31,7 +33,9 @@ export class LoginComponent {
   onLogin() {
     this.principalService.login(this.apiLoginObj).subscribe({
       next: (res: any) => {
-        console.log('Login correcto:', res);
+        console.log('Login correcto:', res, res.rolTipe);
+        localStorage.setItem('token', res.LoginToken);
+        localStorage.setItem('rol', res.rolTipe);
         this.router.navigateByUrl('myautocuidado');
       },
       error: (error) => {
@@ -40,6 +44,9 @@ export class LoginComponent {
       }
     });
   }
+
+
+
 
 }
 

@@ -6,12 +6,12 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { OnMyAutocuidadoComponent } from '../on-my-autocuidado/on-my-autocuidado.component';
 import { Product } from '../../models/product.model';
 import { PrincipalService } from '../../services/principal.service';
-import { ProductItemComponent } from "../product-item/product-item.component";
+import { PanelUsuarioComponent } from "../panel-usuario/panel-usuario.component";
 
 
 @Component({
   selector: 'app-my-autocuidado',
-  imports: [CommonModule, FormsModule, ProductListComponent, OnMyAutocuidadoComponent],
+  imports: [CommonModule, FormsModule, ProductListComponent, OnMyAutocuidadoComponent, PanelUsuarioComponent],
   templateUrl: './my-autocuidado.component.html',
   styleUrl: './my-autocuidado.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -20,26 +20,12 @@ export class MyAutocuidadoComponent {
   searchQuery = '';
   products = signal<Product[]>([]);
   errorMessage = signal<string>('');
-  isLoggedIn = false;
+  isLoggedIn = signal<boolean>(false);
 
   principalService = inject(PrincipalService);
   router = inject(Router);
 
-
-  navigateToLogin() {
-    this.router.navigate(['/login']);
-  }
-
-  navigateToRegister() {
-    this.router.navigate(['/register']);
-  }
-
-  /*   createProfile() {
-      this.router.navigate(['/registro']);
-    } */
-
-
-  onSearch() {
+  onSearch(): void {
     if (this.searchQuery.length < 3) {
       this.errorMessage.set('Ingrese al menos 3 caracteres');
       return;
@@ -57,5 +43,17 @@ export class MyAutocuidadoComponent {
     });
   }
 
+  ngOnInit() {
+    this.checkLoginStatus();
+  }
+
+
+  checkLoginStatus() {
+    this.principalService.isAuthenticated().subscribe(
+      (status: boolean) => {
+        this.isLoggedIn.set(status);
+      }
+    );
+  }
 
 }
