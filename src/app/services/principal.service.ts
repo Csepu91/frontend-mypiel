@@ -11,7 +11,7 @@ import { UserExtendidoCredenciales } from '../models/userExtendidoCredenciales.m
   providedIn: 'root'
 })
 export class PrincipalService {
-  private apiURL = 'http://localhost:3000'/*  'https://backend-mypiel-production.up.railway.app' */;
+  private apiURL = 'https://backend-mypiel-production.up.railway.app' /* 'http://localhost:3000' */;
   private http = inject(HttpClient);
 
 
