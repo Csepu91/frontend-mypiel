@@ -5,12 +5,13 @@
             <p>Recibe atención de dermatólogos especializados en la belleza y salud de tu piel</p>
         </div>
         <div class="particion-superior">
+
             <app-panel-usuario />
-            @if (isLoggedIn){
+
             @if (!esExtendido()){
             <app-forulario-user-extend />
             }
-            }
+
             <div class="sección-derecha">
                 @if (!esExtendido()){
                 <div class="alerta-acceso">

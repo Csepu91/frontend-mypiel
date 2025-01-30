@@ -11,7 +11,7 @@ import { UserExtendidoCredenciales } from '../models/userExtendidoCredenciales.m
   providedIn: 'root'
 })
 export class PrincipalService {
-  private apiURL = 'https://backend-mypiel-production.up.railway.app' /* 'http://localhost:3000' */;
+  private apiURL = 'http://localhost:3000'/*  'https://backend-mypiel-production.up.railway.app' */;
   private http = inject(HttpClient);
 
 
@@ -25,11 +25,6 @@ export class PrincipalService {
   register(credentials: RegisterCredenciales) {
     return this.http.post(`${this.apiURL}/auth/register`, credentials);
   }
-
-  /*   getProducts(): Observable<Product[]> {
-      return this.http.get<Product[]>(`${this.apiURL}/product/all`)
-        .pipe(map(products => productsAdapter(products)));
-    } */
 
   getProductByText(text: string): Observable<Product[]> {
     if (text.length < 3) {
@@ -46,6 +41,11 @@ export class PrincipalService {
   createUserExtend(credentials: UserExtendidoCredenciales) {
     return this.http.post(`${this.apiURL}/user-extend`, credentials);
   }
+
+  updateToExtend(credentials: UserExtendidoCredenciales) {
+    return this.http.put(`${this.apiURL}/user-comun/update/${credentials.idUserComun}`, {});
+  }
+
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Ha ocurrido un error en la búsqueda';

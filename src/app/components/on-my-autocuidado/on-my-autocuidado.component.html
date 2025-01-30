@@ -1,3 +1,4 @@
+@if (isLoggedIn()){
 <div class="autocuidado-container">
     <h1>Sección Personal</h1>
     <div class="seccion-principal">
@@ -7,5 +8,8 @@
         </div>
         <div class="misValoraciones">
             <p>Mis Valoraciones</p>
+            <app-post-item [posts]="posts()" (newPost)="onNewPost($event)" />
         </div>
     </div>
+</div>
+}

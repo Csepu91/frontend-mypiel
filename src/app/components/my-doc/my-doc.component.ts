@@ -14,12 +14,6 @@ import { ForularioUserExtendComponent } from "../forulario-user-extend/forulario
 export class MyDocComponent {
   formulario: FormGroup;
   imagenesCargadas: File[] = [];
-  @ViewChild(PanelUsuarioComponent) panelUsuario!: PanelUsuarioComponent;
-
-  get isLoggedIn(): boolean {
-    return this.panelUsuario?.isLoggedIn();
-  }
-
 
   constructor(private fb: FormBuilder) {
     this.formulario = this.fb.group({
@@ -32,8 +26,6 @@ export class MyDocComponent {
     const files = event.target.files;
     this.imagenesCargadas = Array.from(files);
   }
-
-
 
   esExtendido(): boolean {
     const rolType = localStorage.getItem('rol');

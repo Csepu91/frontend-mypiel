@@ -34,6 +34,7 @@ export class LoginComponent {
     this.principalService.login(this.apiLoginObj).subscribe({
       next: (res: any) => {
         console.log('Login correcto:', res, res.rolTipe);
+        localStorage.setItem('id', res.idUserComun);
         localStorage.setItem('token', res.LoginToken);
         localStorage.setItem('rol', res.rolTipe);
         this.router.navigateByUrl('myautocuidado');
