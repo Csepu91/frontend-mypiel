@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -25,11 +24,15 @@ export class LoginComponent {
     "password": ""
   }
 
+  navigateToRegister() {
+    this.router.navigate(['/register']);
+  }
+
   onLogin() {
     this.principalService.login(this.apiLoginObj).subscribe({
       next: (res: any) => {
         console.log('Login correcto:', res);
-        this.router.navigateByUrl('OnMyAutocuidado');
+        this.router.navigateByUrl('myautocuidado');
       },
       error: (error) => {
         console.error('Error en login:', error);

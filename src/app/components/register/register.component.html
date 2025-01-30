@@ -1,0 +1,31 @@
+<div class="card-contenedor">
+    <div class="card-register">
+        <h1>Crear Usuario</h1>
+        <div class="textfield">
+            <label for="nombre-input">Nombre</label>
+            <input id="nombre-input" type="text" name="nombre" [(ngModel)]="apiRegisterObj.nombre"
+                placeholder="Ingrese su nombre">
+        </div>
+        <div class="textfield">
+            <label for="apellido1-input">Primer Apellido</label>
+            <input id="apellido1-input" type="text" name="apellido1" [(ngModel)]="apiRegisterObj.apellido1"
+                placeholder="Ingrese su primer apellido">
+        </div>
+        <div class="textfield">
+            <label for="apellido2-input">Segundo Apellido</label>
+            <input id="apellido2-input" type="text" name="apellido2" [(ngModel)]="apiRegisterObj.apellido2"
+                placeholder="Ingrese su segundo apellido">
+        </div>
+        <div class="textfield">
+            <label for="correo-input">Correo</label>
+            <input id="correo-input" type="email" name="correo" [(ngModel)]="apiRegisterObj.correo"
+                placeholder="correo@ejemplo.com">
+        </div>
+        <div class="textfield">
+            <label for="password-input">Contraseña</label>
+            <input id="password-input" type="password" name="password" [(ngModel)]="apiRegisterObj.password"
+                placeholder="Contraseña">
+        </div>
+        <button class="btn-register" (click)="onRegister()">Crear usuario</button>
+    </div>
+</div>

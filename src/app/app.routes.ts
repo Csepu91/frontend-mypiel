@@ -4,6 +4,7 @@ import { MyInicioComponent } from './components/my-inicio/my-inicio.component';
 import { MyAutocuidadoComponent } from './components/my-autocuidado/my-autocuidado.component';
 import { MyDocComponent } from './components/my-doc/my-doc.component';
 import { OnMyAutocuidadoComponent } from './components/on-my-autocuidado/on-my-autocuidado.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path: 'OnMyAutocuidado',

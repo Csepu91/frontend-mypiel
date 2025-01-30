@@ -4,12 +4,13 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 import { productsAdapter } from '../adapters/product-adapter';
 import { Product } from '../models/product.model';
 import { LoginCredenciales } from '../models/loginCredenciales.model';
+import { RegisterCredenciales } from '../models/registerCredenciales.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrincipalService {
-  private apiURL = 'https://backend-mypiel-production.up.railway.app';
+  private apiURL = 'https://backend-mypiel-production.up.railway.app' /* 'http://localhost:3000' */;
   private http = inject(HttpClient);
 
 
@@ -18,12 +19,14 @@ export class PrincipalService {
     return this.http.post(`${this.apiURL}/auth/login`, credentials);
   }
 
+  register(credentials: RegisterCredenciales) {
+    return this.http.post(`${this.apiURL}/auth/register`, credentials);
+  }
+
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiURL}/product/all`)
       .pipe(map(products => productsAdapter(products)));
   }
-
-
 
   getProductByText(text: string): Observable<Product[]> {
     if (text.length < 3) {

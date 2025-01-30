@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     min-height: 100vh;
     background-color: #FFECD7;
 }
@@ -13,12 +13,12 @@
 
     h1 {
         color: #008DB1;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         margin-bottom: 1rem;
     }
 
     p {
-        color: #666;
+        color: #5d5d5d;
         font-size: 1.2rem;
     }
 }
@@ -37,7 +37,7 @@
     text-align: center;
     padding: 2rem;
     background: white;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 141, 177, 0.1);
 
     h2 {
@@ -54,9 +54,10 @@
 .btn-opcion {
     padding: 1rem 2rem;
     background-color: #008DB1;
+    box-shadow: 0px 10px 10px #8da49952;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.5s ease;
 

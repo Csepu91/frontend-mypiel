@@ -30,9 +30,13 @@ export class MyAutocuidadoComponent {
     this.router.navigate(['/login']);
   }
 
-  createProfile() {
-    this.router.navigate(['/registro']);
+  navigateToRegister() {
+    this.router.navigate(['/register']);
   }
+
+  /*   createProfile() {
+      this.router.navigate(['/registro']);
+    } */
 
 
   onSearch() {

@@ -1,102 +1,146 @@
 .autocuidado-container {
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     background-color: #FFECD7;
     min-height: 100vh;
-}
 
-.seccion-superior {
-    text-align: center;
-    margin-bottom: 3rem;
 
-    h1 {
-        color: #008DB1;
-        margin-bottom: 1rem;
-    }
-}
+    .seccion-superior {
+        text-align: center;
+        max-height: 50%;
+        overflow-y: auto;
 
-.barra-busqueda {
-    display: flex;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 2rem auto;
 
-    input {
-        flex: 1;
-        padding: 0.75rem;
-        border: 2px solid #008DB1;
-        border-radius: 8px;
-        font-size: 1rem;
-    }
+        h1 {
+            color: #008DB1;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
 
-    .btn-buscar {
-        padding: 0.75rem 1.5rem;
-        background-color: #008DB1;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
+        h2 {
+            color: #008DB1;
+        }
 
-        &:hover {
-            background-color: #009cc3;
-            transition: background-color 0.5s ease;
+        p {
+            color: #5d5d5d;
+            font-size: 1.2rem;
+        }
+
+
+
+
+        .particion-superior {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+
+
+            .panel-usuario {
+                background: #ffffff;
+                padding: 2rem;
+                border-radius: 15px;
+                margin-top: 2rem;
+                margin-bottom: 1.5rem;
+                box-shadow: 0px 3px 40px rgba(0, 141, 177, 0.1);
+                width: 35%;
+                max-height: 250px;
+                max-width: 300px;
+
+                .botones-acceso {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    margin: 2rem auto 0;
+                    max-width: 60%;
+                    align-items: center;
+
+                }
+
+                .btn-primary,
+                .btn-secondary {
+                    padding: 0.75rem;
+                    border-radius: 8px;
+                    border: none;
+                    cursor: pointer;
+                    font-weight: 500;
+                    width: 200px;
+                    text-align: center;
+                }
+
+                .btn-primary {
+                    background-color: #008DB1;
+                    color: white;
+                    box-shadow: 0px 10px 10px #8da49952;
+
+                    &:hover {
+                        background-color: #009cc3;
+                        transition: background-color 0.5s ease;
+                    }
+                }
+
+                .btn-secondary {
+                    background-color: white;
+                    border: 2px solid #008DB1;
+                    color: #008DB1;
+
+                    &:hover {
+                        background-color: #00bae91d;
+                        transition: background-color 0.5s ease;
+                    }
+                }
+
+            }
+
+
+            .sección-derecha {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 80%;
+
+                .barra-busqueda {
+                    display: flex;
+                    gap: 1rem;
+                    width: 100%;
+                    margin-top: 2rem;
+
+
+                    input {
+                        flex: auto;
+                        padding: 0.75rem;
+                        border: 2px solid #008DB1;
+                        border-radius: 8px;
+                        font-size: 1rem;
+                    }
+
+                    .btn-buscar {
+                        padding: 0.75rem 1.5rem;
+                        background-color: #008DB1;
+                        color: white;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #009cc3;
+                            transition: background-color 0.5s ease;
+                        }
+                    }
+                }
+
+                .error-message {
+                    color: #dc3545;
+                    padding: 1rem;
+                    background-color: #f8d7da;
+                    border-radius: 8px;
+                    text-align: center;
+                }
+            }
+
         }
     }
-}
 
-.contenido-principal {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 2rem;
-}
-
-.panel-usuario {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    .botones-acceso {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-}
-
-.btn-primary,
-.btn-secondary {
-    padding: 0.75rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-
-
-}
-
-.btn-primary {
-    background-color: #008DB1;
-    color: white;
-
-    &:hover {
-        background-color: #009cc3;
-        transition: background-color 0.5s ease;
-    }
-}
-
-.btn-secondary {
-    background-color: white;
-    border: 2px solid #008DB1;
-    color: #008DB1;
-
-    &:hover {
-        background-color: #00bae91d;
-        transition: background-color 0.5s ease;
-    }
-}
-
-@media (max-width: 768px) {
-    .contenido-principal {
-        grid-template-columns: 1fr;
+    .seccion-inferior {
+        max-height: 50%;
+        overflow-y: auto;
     }
 }
